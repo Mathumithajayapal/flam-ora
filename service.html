@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -506,7 +505,7 @@
 
     /* ========== SERVICE PAGE STYLES ========== */
 
-    /* Hero Banner */
+    /* Hero Banner - FIXED background image using CSS background-image property */
     .service-hero {
       position: relative;
       height: 95vh;
@@ -515,15 +514,12 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('Images/img (4).jpg') center/cover no-repeat;
     }
 
-    .service-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0.45;
-      filter: brightness(0.75);
+    /* Fallback for dark mode */
+    body.dark-mode .service-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('Images/img (4).jpg') center/cover no-repeat;
     }
 
     .service-hero-overlay {
@@ -537,9 +533,13 @@
     .service-hero .section-label {
       font-size: 0.8rem;
       letter-spacing: 4px;
-      color: #5fa3b5;
+      color: #c9a87b;
       margin-bottom: 1rem;
       font-weight: 600;
+    }
+
+    body.dark-mode .service-hero .section-label {
+      color: var(--dark-accent);
     }
 
     .service-hero h1 {
@@ -1097,9 +1097,8 @@
   </div>
 
   <main>
-    <!-- Hero Section with standard img tag -->
+    <!-- Hero Section with CSS background image (FIXED) -->
     <section class="service-hero">
-      <img class="service-hero-bg" src="Images/img (7).jpg" alt="Artisanal Candle Background">
       <div class="service-hero-overlay fade-up">
         <div class="section-label">Handcrafted Excellence</div>
         <h1>Artisanal Services<br>For Discerning Souls</h1>
@@ -1109,7 +1108,7 @@
       </div>
     </section>
 
-    <!-- 3x3 GLASS CARDS GRID: All images now use standard <img> tags -->
+    <!-- 3x3 GLASS CARDS GRID -->
     <section class="services-grid-section" id="services">
       <div class="section-header">
         <span class="tag">ARTISANAL CANDLE MASTERY</span>
@@ -1119,7 +1118,7 @@
       <div class="service-glass-grid">
         <!-- Card 1: Bespoke Soy Wax Blending -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (1).jpg" alt="Bespoke Soy Wax Blending">
+          <img class="card-img" src="Images/img (1).jpg" alt="Bespoke Soy Wax Blending" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-seedling"></i></div>
             <h3>Bespoke Soy Wax</h3>
@@ -1129,7 +1128,7 @@
         </div>
         <!-- Card 2: Botanical Infusion Ritual -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (2).jpg" alt="Botanical Infusion Ritual">
+          <img class="card-img" src="Images/img (2).jpg" alt="Botanical Infusion Ritual" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-leaf"></i></div>
             <h3>Botanical Infusion</h3>
@@ -1139,7 +1138,7 @@
         </div>
         <!-- Card 3: Wooden Wick Experience -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (3).jpg" alt="Wooden Wick Experience">
+          <img class="card-img" src="Images/img (3).jpg" alt="Wooden Wick Experience" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-fire"></i></div>
             <h3>Wooden Wick Ceremony</h3>
@@ -1149,7 +1148,7 @@
         </div>
         <!-- Card 4: Aromatherapy Blending Lab -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (4).jpg" alt="Aromatherapy Blending Lab">
+          <img class="card-img" src="Images/img (4).jpg" alt="Aromatherapy Blending Lab" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-mortar-pestle"></i></div>
             <h3>Aromatherapy Lab</h3>
@@ -1159,7 +1158,7 @@
         </div>
         <!-- Card 5: Hand-Carved Pillar Candles -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (6).jpg" alt="Hand-Carved Pillar Candles">
+          <img class="card-img" src="Images/img (6).jpg" alt="Hand-Carved Pillar Candles" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-hand-sparkles"></i></div>
             <h3>Carved Pillar Art</h3>
@@ -1169,7 +1168,7 @@
         </div>
         <!-- Card 6: Seasonal Limited Editions -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (7).jpg" alt="Seasonal Limited Editions">
+          <img class="card-img" src="Images/img (7).jpg" alt="Seasonal Limited Editions" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
             <h3>Seasonal Collection</h3>
@@ -1179,7 +1178,7 @@
         </div>
         <!-- Card 7: Private Candle Atelier -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (8).jpg" alt="Private Candle Atelier">
+          <img class="card-img" src="Images/img (8).jpg" alt="Private Candle Atelier" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
             <h3>Private Atelier</h3>
@@ -1189,7 +1188,7 @@
         </div>
         <!-- Card 8: Eco-Luxe Refill Service -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (9).jpg" alt="Eco-Luxe Refill Service">
+          <img class="card-img" src="Images/img (9).jpg" alt="Eco-Luxe Refill Service" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-recycle"></i></div>
             <h3>Eco-Refill Ritual</h3>
@@ -1199,7 +1198,7 @@
         </div>
         <!-- Card 9: Wedding & Event Candles -->
         <div class="glass-card">
-          <img class="card-img" src="images/img (10).jpg" alt="Wedding and Event Candles">
+          <img class="card-img" src="Images/img (10).jpg" alt="Wedding and Event Candles" onerror="this.style.opacity='0'">
           <div class="card-content">
             <div class="card-icon"><i class="fas fa-ring"></i></div>
             <h3>Event Candle Suite</h3>
@@ -1361,5 +1360,4 @@
     })();
   </script>
 </body>
-
 </html>

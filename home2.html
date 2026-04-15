@@ -1,35 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Flamora · Botanical Essence | Mood & Scent</title>
+  <title>Flamora · Home | Botanical Elegance & Artisanal Candles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/jpeg" href="Images\favicon.jpg">
-
+  <link rel="icon" type="image/jpeg" href="#">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="icon" type="image/jpeg"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle fill='%23003f61' cx='50' cy='50' r='50'/%3E%3Ctext x='50' y='67' text-anchor='middle' fill='white' font-size='48' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    /* Dark mode enhanced blue variables */
-    :root {
-      --brand-blue: #003f61;
-      --brand-blue-light: #2c6e9e;
-      --dark-accent: #4a9fc5;
-      --dark-accent-hover: #6bb5d6;
     }
 
     body {
@@ -40,6 +25,7 @@
       transition: background-color 0.2s, color 0.2s;
     }
 
+    /* Dark mode - refined blue */
     body.dark-mode {
       background-color: #000000;
       color: #ffffff !important;
@@ -70,7 +56,14 @@
       background-color: #000000;
     }
 
-    /* Brand accent - light mode uses #003f61, dark mode uses #4a9fc5 */
+    body.dark-mode .value-card,
+    body.dark-mode .team-card,
+    body.dark-mode .testimonial-card,
+    body.dark-mode .feature-card {
+      background: #111111;
+      border-color: #2a2a2a;
+    }
+
     .logo-text span,
     .login-btn,
     .dark-toggle,
@@ -79,8 +72,11 @@
     .newsletter-input button,
     .social-links a:hover,
     .footer-col a:hover,
-    .footer-bottom a:hover {
-      color: var(--brand-blue) !important;
+    .footer-bottom a:hover,
+    .hero-btn,
+    .category-btn:hover,
+    .feature-icon {
+      color: #003f61 !important;
     }
 
     body.dark-mode .logo-text span,
@@ -91,8 +87,9 @@
     body.dark-mode .newsletter-input button,
     body.dark-mode .social-links a:hover,
     body.dark-mode .footer-col a:hover,
-    body.dark-mode .footer-bottom a:hover {
-      color: var(--dark-accent) !important;
+    body.dark-mode .footer-bottom a:hover,
+    body.dark-mode .feature-icon {
+      color: #4a9fc5 !important;
     }
 
     .login-btn,
@@ -104,60 +101,60 @@
     body.dark-mode .login-btn,
     body.dark-mode .dark-toggle,
     body.dark-mode .rtl-toggle {
-      border-color: var(--dark-accent);
+      border-color: #4a9fc5;
+    }
+
+    .login-btn {
+      background: transparent;
+      color: #003f61;
+    }
+
+    body.dark-mode .login-btn {
+      color: #4a9fc5;
     }
 
     .hamburger span {
-      background-color: var(--brand-blue);
+      background-color: #003f61;
     }
 
     body.dark-mode .hamburger span {
-      background-color: var(--dark-accent);
-    }
-
-    .mobile-dropdown-toggle span:last-child {
-      color: var(--brand-blue);
-    }
-
-    body.dark-mode .mobile-dropdown-toggle span:last-child {
-      color: var(--dark-accent);
+      background-color: #4a9fc5;
     }
 
     .unique-footer {
-      border-top: 4px solid var(--brand-blue);
+      border-top: 4px solid #003f61;
     }
 
     body.dark-mode .unique-footer {
-      border-top-color: var(--dark-accent);
+      border-top-color: #4a9fc5;
     }
 
-    .nav-links a.active,
-    .mobile-nav-link.active {
-      color: var(--brand-blue) !important;
+    .active-link-style {
+      color: #003f61 !important;
       font-weight: 700;
       position: relative;
     }
 
-    body.dark-mode .nav-links a.active,
-    body.dark-mode .mobile-nav-link.active {
-      color: var(--dark-accent) !important;
+    body.dark-mode .active-link-style {
+      color: #4a9fc5 !important;
     }
 
-    .nav-links a.active::after {
+    .nav-links a.active-link-style::after {
       content: '';
       position: absolute;
       bottom: -2px;
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: var(--brand-blue);
+      background-color: #003f61;
       border-radius: 2px;
     }
 
-    body.dark-mode .nav-links a.active::after {
-      background-color: var(--dark-accent);
+    body.dark-mode .nav-links a.active-link-style::after {
+      background-color: #4a9fc5;
     }
 
+    /* Header */
     .site-header {
       position: sticky;
       top: 0;
@@ -228,13 +225,11 @@
       .hamburger {
         display: none;
       }
-
       .nav-links {
         display: flex;
         gap: 2rem;
         list-style: none;
       }
-
       .action-buttons {
         display: flex;
         align-items: center;
@@ -255,18 +250,62 @@
       display: inline-block;
       white-space: nowrap;
       transition: color 0.2s;
-      cursor: pointer;
     }
 
     .nav-links a:hover {
-      color: var(--brand-blue);
+      color: #003f61;
     }
 
     body.dark-mode .nav-links a:hover {
-      color: var(--dark-accent);
+      color: #4a9fc5;
     }
 
-    /* Clean dropdown style with proper spacing - added caret icon */
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: -12px;
+      background: white;
+      min-width: 200px;
+      border-radius: 12px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      border: 1px solid #eef2f6;
+    }
+
+    body.dark-mode .dropdown-content {
+      background: #1a1a1a;
+      border-color: #2c2c2c;
+    }
+
+    .nav-item:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(4px);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    body.dark-mode .dropdown-content a {
+      color: #ffffff;
+    }
+
+    .dropdown-content a:hover {
+      background: #f5f7fa;
+      color: #003f61;
+    }
+
     .nav-item > a {
       display: inline-flex;
       align-items: center;
@@ -285,60 +324,6 @@
       transform: rotate(180deg);
     }
 
-    /* Remove dropdown arrow for non-dropdown items */
-    .nav-links > li:not(.nav-item) > a::after {
-      display: none;
-    }
-
-    .dropdown-content {
-      position: absolute;
-      top: 100%;
-      left: -12px;
-      background: white;
-      min-width: 200px;
-      border-radius: 12px;
-      padding: 0.6rem 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-      z-index: 100;
-      border: 1px solid #eef2f6;
-    }
-
-    body.dark-mode .dropdown-content {
-      background: #1a1a1a;
-      border-color: #2c2c2c;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-item:hover .dropdown-content {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(4px);
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.6rem 1.5rem;
-      font-size: 0.9rem;
-      transition: background 0.15s;
-      text-decoration: none;
-      color: #000000;
-      cursor: pointer;
-    }
-
-    .dropdown-content a:hover {
-      background: #f5f7fa;
-      color: var(--brand-blue);
-    }
-
-    body.dark-mode .dropdown-content a:hover {
-      background: #2a2a2a;
-      color: var(--dark-accent);
-    }
-
     .header-actions {
       display: flex;
       align-items: center;
@@ -347,18 +332,11 @@
 
     .nav-btn {
       padding: 0.5rem 1.2rem;
-      border-radius: 40px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
       text-decoration: none;
       display: inline-block;
-      border: 1.5px solid transparent;
-    }
-
-    .login-btn {
-      display: inline-block;
-      background: transparent;
     }
 
     .dark-toggle,
@@ -375,21 +353,7 @@
       border: 1.5px solid;
     }
 
-    @media (max-width: 480px) {
-      .site-header {
-        padding: 0.6rem 1rem;
-      }
-
-      .logo-text {
-        font-size: 1.3rem;
-      }
-
-      .login-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-
+    /* Mobile menu */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -442,15 +406,10 @@
       font-weight: 500;
       display: block;
       padding: 0.75rem 0;
-      cursor: pointer;
     }
 
     .mobile-nav-link:hover {
-      color: var(--brand-blue);
-    }
-
-    body.dark-mode .mobile-nav-link:hover {
-      color: var(--dark-accent);
+      color: #003f61;
     }
 
     .mobile-dropdown-toggle {
@@ -491,7 +450,6 @@
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.2s;
-      cursor: pointer;
     }
 
     .close-menu {
@@ -504,15 +462,307 @@
       border: none;
       width: 40px;
       height: 40px;
+    }
+
+    /* Homepage hero */
+    .hero-main {
+      position: relative;
+      height: 90vh;
+      min-height: 600px;
+      background: linear-gradient(120deg, #0f1f1c 0%, #1b2e2a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('Images/img (9).jpg') center/cover no-repeat;
+      opacity: 0.35;
+      filter: brightness(0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+
+    .hero-badge {
+      font-size: 0.85rem;
+      letter-spacing: 6px;
+      color: #bcd4de;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .hero-main h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 900;
+      color: white;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .hero-main p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 2.2rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #003f61;
+      color: white !important;
+      padding: 0.9rem 2.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-primary:hover {
+      background: #2c6e8f;
+      transform: translateY(-3px);
+    }
+
+    body.dark-mode .btn-primary {
+      background: #4a9fc5;
+    }
+
+    body.dark-mode .btn-primary:hover {
+      background: #6bb5d6;
+    }
+
+    /* Featured categories */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #4a5562;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+    }
+
+    body.dark-mode .section-subtitle {
+      color: #bcbcbc;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .category-card {
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      height: 380px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 36px rgba(0,0,0,0.12);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .category-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 2rem 1.5rem;
+      color: white;
+    }
+
+    .category-overlay h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .category-btn {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.6rem;
+      color: white !important;
+      text-decoration: none;
+    }
+
+    /* Feature highlights */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      transition: all 0.25s ease;
+      border: 1px solid #edf2f7;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    body.dark-mode .feature-card {
+      background: #0f0f0f;
+      border-color: #2c2c2c;
+    }
+
+    .feature-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .feature-card h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+      color: #4b5563;
+    }
+
+    body.dark-mode .feature-card p {
+      color: #b0b0b0;
+    }
+
+    /* testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem;
+      border: 1px solid #edf2f7;
       transition: transform 0.2s;
     }
 
+    body.dark-mode .testimonial-card {
+      background: #0f0f0f;
+      border-color: #2c2c2c;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    .star-rating {
+      color: #ffb84d;
+      margin-bottom: 0.8rem;
+    }
+
+    /* CTA banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #003f61, #1a5e7a);
+      border-radius: 48px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    body.dark-mode .cta-banner {
+      background: linear-gradient(135deg, #0a3b4f, #1a5e7a);
+    }
+
+    .cta-banner h2 {
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin: 0 auto 1.8rem;
+    }
+
+    .btn-light {
+      background: white;
+      color: #003f61 !important;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Footer (exactly from reference with small adjustments) */
     .unique-footer {
       background-color: #000000;
       color: #ffffff;
       padding: 3rem 2rem 2rem;
-      border-top: 4px solid var(--brand-blue);
-      margin-top: 0;
+      border-top: 4px solid #003f61;
+      margin-top: 3rem;
     }
 
     .footer-container {
@@ -533,11 +783,15 @@
       gap: 1.4rem;
     }
 
-    .social-links a {
+    .social-links i {
       color: #cccccc;
-      text-decoration: none;
       font-size: 1.2rem;
+      cursor: pointer;
       transition: color 0.2s;
+    }
+
+    .social-links i:hover {
+      color: #003f61;
     }
 
     .footer-col h4 {
@@ -561,12 +815,10 @@
       color: #cccccc;
       text-decoration: none;
       transition: color 0.2s;
-      cursor: pointer;
     }
 
-    .newsletter p {
-      color: #cccccc;
-      margin-bottom: 1.2rem;
+    .footer-col a:hover {
+      color: #003f61;
     }
 
     .newsletter-input {
@@ -609,24 +861,23 @@
     }
 
     .footer-bottom a {
-      color: #999;
+      color: #cccccc;
       text-decoration: none;
-      margin-left: 1.5rem;
-      transition: color 0.2s;
-      cursor: pointer;
+      margin-left: 1rem;
     }
 
     @media (max-width: 900px) {
       .footer-container {
         grid-template-columns: 1fr 1fr;
       }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
     }
-
     @media (max-width: 768px) {
       .footer-container {
         grid-template-columns: 1fr;
       }
-
       .footer-bottom {
         flex-direction: column;
         text-align: center;
@@ -634,503 +885,8 @@
       }
     }
 
-    /* ========== HOMEPAGE SECTIONS (All preserved) ========== */
-    .about-hero {
-      position: relative;
-      height: 95vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('Images/img (6).jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0;
-    }
-
-    .about-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 2rem;
-    }
-
-    .about-hero-content {
-      text-align: center;
-      max-width: 700px;
-      color: white;
-    }
-
-    .section-label {
-      font-size: 0.9rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: #c9a87b;
-      margin-bottom: 1rem;
-    }
-
-    .about-hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      margin: 1rem 0;
-      line-height: 1.2;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      background: var(--brand-blue);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    body.dark-mode .hero-btn {
-      background: var(--dark-accent);
-    }
-
-    .hero-btn:hover {
-      transform: translateY(-2px);
-      background: var(--brand-blue-light);
-    }
-
-    body.dark-mode .hero-btn:hover {
-      background: var(--dark-accent-hover);
-    }
-
-    @media (max-width: 768px) {
-      .about-hero {
-        height: 70vh;
-      }
-    }
-
-    /* MOOD SECTION — FIXED, fully visible, responsive, with smooth interaction */
-    .mood-section {
-      text-align: center;
-      padding: 5rem 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-      background: #ffffff;
-      transition: background 0.2s;
-    }
-
-    body.dark-mode .mood-section {
-      background: #000000;
-    }
-
-    .mood-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-    }
-
-    .mood-section>p {
-      color: #5a5a5a;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    body.dark-mode .mood-section>p {
-      color: #bbbbbb;
-    }
-
-    .mood-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      margin: 2rem 0 2.5rem;
-    }
-
-    .mood-buttons button {
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 50px;
-      background: var(--brand-blue);
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      font-family: 'Inter', sans-serif;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    body.dark-mode .mood-buttons button {
-      background: var(--dark-accent);
-    }
-
-    .mood-buttons button:hover {
-      background: var(--brand-blue-light);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 63, 97, 0.2);
-    }
-
-    body.dark-mode .mood-buttons button:hover {
-      background: var(--dark-accent-hover);
-    }
-
-    .mood-display {
-      background: #f9f9f9;
-      border-radius: 36px;
-      padding: 2rem;
-      max-width: 550px;
-      margin: 0 auto;
-      transition: background 0.2s;
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
-    }
-
-    body.dark-mode .mood-display {
-      background: #111111;
-    }
-
-    .mood-display img {
-      width: 260px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 32px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-      transition: transform 0.4s ease, box-shadow 0.3s;
-    }
-
-    .mood-display img:hover {
-      transform: scale(1.02);
-    }
-
-    .mood-display h3 {
-      margin-top: 1.5rem;
-      font-size: 1.7rem;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      color: var(--brand-blue);
-    }
-
-    body.dark-mode .mood-display h3 {
-      color: var(--dark-accent);
-    }
-
-    @media (max-width: 640px) {
-      .mood-display img {
-        width: 200px;
-        height: 200px;
-      }
-
-      .mood-buttons button {
-        padding: 0.6rem 1.4rem;
-        font-size: 0.9rem;
-      }
-
-      .mood-section h2 {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* other existing sections (signature, ritual, etc) */
-    .signature-section {
-      padding: 5rem 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-header .subhead {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brand-blue);
-      font-weight: 600;
-    }
-
-    body.dark-mode .section-header .subhead {
-      color: var(--dark-accent);
-    }
-
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-top: 0.5rem;
-    }
-
-    body.dark-mode .section-header h2 {
-      color: #ffffff;
-    }
-
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .collection-card {
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .collection-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card-img {
-      height: 320px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 24px;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-    }
-
-    .ritual-experience {
-      background: #f7f5f0;
-      padding: 5rem 2rem;
-      transition: background 0.2s;
-    }
-
-    body.dark-mode .ritual-experience {
-      background: #0a0a0a;
-    }
-
-    .ritual-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .ritual-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-    }
-
-    .ritual-list {
-      list-style: none;
-      margin: 1.5rem 0;
-    }
-
-    .ritual-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .ritual-btn {
-      display: inline-block;
-      background: var(--brand-blue);
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-
-    body.dark-mode .ritual-btn {
-      background: var(--dark-accent);
-    }
-
-    .ritual-btn:hover {
-      background: var(--brand-blue-light);
-    }
-
-    body.dark-mode .ritual-btn:hover {
-      background: var(--dark-accent-hover);
-    }
-
-    .ritual-image img {
-      width: 100%;
-      border-radius: 28px;
-      transition: transform 0.4s;
-    }
-
-    .personalized-section {
-      padding: 5rem 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .personalized-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 2.5rem;
-    }
-
-    .personal-card {
-      background: #ffffff;
-      border-radius: 32px;
-      padding: 2rem 1.5rem;
-      flex: 1;
-      min-width: 240px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
-      border: 1px solid #ececec;
-      transition: all 0.3s;
-    }
-
-    body.dark-mode .personal-card {
-      background: #111111;
-      border-color: #2a2a2a;
-    }
-
-    .quiz-btn {
-      margin-top: 2rem;
-      background: transparent;
-      border: 2px solid var(--brand-blue);
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    body.dark-mode .quiz-btn {
-      color: #ffffff;
-      border-color: var(--dark-accent);
-    }
-
-    .quiz-btn:hover {
-      background: var(--brand-blue);
-      color: white;
-    }
-
-    body.dark-mode .quiz-btn:hover {
-      background: var(--dark-accent);
-      color: #000000;
-    }
-
-    .giftset-preview {
-      background: #faf9f7;
-      padding: 5rem 2rem;
-    }
-
-    body.dark-mode .giftset-preview {
-      background: #050505;
-    }
-
-    .giftset-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .gift-btn {
-      background: var(--brand-blue);
-      color: white;
-      padding: 0.9rem 2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    body.dark-mode .gift-btn {
-      background: var(--dark-accent);
-    }
-
-    .gift-btn:hover {
-      background: var(--brand-blue-light);
-    }
-
-    body.dark-mode .gift-btn:hover {
-      background: var(--dark-accent-hover);
-    }
-
-    .giftset-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .gift-img {
-      background-size: cover;
-      background-position: center;
-      height: 180px;
-      border-radius: 20px;
-    }
-
-    .newsletter-cta {
-      background: linear-gradient(135deg, #001f2e 0%, var(--brand-blue) 100%);
-      padding: 3rem 2rem;
-      text-align: center;
-      color: white;
-    }
-
-    body.dark-mode .newsletter-cta {
-      background: linear-gradient(135deg, #0a1a24 0%, var(--dark-accent) 100%);
-    }
-
-    .newsletter-cta .inline-form {
-      display: flex;
-      max-width: 500px;
-      margin: 1.5rem auto 0;
-      gap: 0.5rem;
-    }
-
-    .newsletter-cta input {
-      flex: 1;
-      padding: 0.9rem 1rem;
-      border-radius: 50px;
-      border: none;
-      outline: none;
-    }
-
-    .newsletter-cta button {
-      background: black;
-      color: white;
-      border: none;
-      padding: 0 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    @media (max-width: 900px) {
-      .ritual-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .giftset-container {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Tablet view (768px to 1024px) → 2x2 footer grid */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-    }
-    .dropdown-content {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
     .cta-btn {
-      background: var(--brand-blue);
+      background: #003f61;
       color: #ffffff !important;
       border-radius: 30px;
       padding: 0.6rem 1.5rem;
@@ -1139,57 +895,44 @@
       transition: all 0.3s ease;
     }
 
-    body.dark-mode .cta-btn {
-      background: var(--dark-accent);
-      box-shadow: 0 6px 16px rgba(74, 159, 197, 0.3);
-    }
-
     .cta-btn:hover {
-      background: var(--brand-blue-light);
+      background: #5fa3b5;
       transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(0, 63, 97, 0.35);
-    }
-
-    body.dark-mode .cta-btn:hover {
-      background: var(--dark-accent-hover);
-    }
-    .gift-btn {
-      display: inline-block;
-      margin-top: 30px !important;
-    }
-    .giftset-text p {
-      margin-top: 30px;
     }
   </style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="header-container">
-      <a href="index.html" class="logo"><span class="logo-text">Flam<span>ora</span></span></a>
+      <a href="#" class="logo">
+        <span class="logo-text">Flam<span>ora</span></span>
+      </a>
       <ul class="nav-links">
-        <li class="nav-item"><a href="index.html" class="active" data-page="home">Home</a>
+        <li class="nav-item">
+          <a href="#" data-nav="home" class="active-link-style">Home</a>
           <ul class="dropdown-content">
-            <li><a href="index.html" data-page="home1">Home 1</a></li>
-            <li><a href="home2.html" data-page="home2">Home 2</a></li>
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
           </ul>
         </li>
-        <li><a href="about.html" data-page="about">About</a></li>
-        <li><a href="service.html" data-page="service">Service</a></li>
-        <li><a href="collection.html" data-page="blends">Collection</a></li>
-        <li><a href="experience.html" data-page="ritual">Experience</a></li>
-        <li><a href="personalize.html" data-page="personalize">Personalize</a></li>
-        <li><a href="giftSet.html" data-page="giftsets">GiftSets</a></li>
-        <li><a href="contact.html" data-page="contact">Contact</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="service.html" data-nav="service">Service</a></li>
+        <li><a href="collection.html" data-nav="blends">Collection</a></li>
+        <li><a href="experience.html" data-nav="ritual">Experience</a></li>
+        <li><a href="personalize.html" data-nav="personalize">Personalize</a></li>
+        <li><a href="giftset.html" data-nav="giftsets">GiftSets</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
       <div class="header-actions">
         <div class="action-buttons">
-          <a href="login.html" class="nav-btn login-btn cta-btn" data-nav="login">Login</a>
-          <div class="dark-toggle" id="darkToggleBtn">🌙</div>
-          <div class="rtl-toggle" id="rtlToggleBtn">LTR</div>
+          <a href="login.html" class="nav-btn login-btn cta-btn">Login</a>
+          <div class="dark-toggle" id="darkToggleBtn" aria-label="Dark mode toggle">🌙</div>
+          <div class="rtl-toggle" id="rtlToggleBtn" aria-label="RTL toggle">LTR</div>
         </div>
       </div>
-      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -1198,16 +941,18 @@
     <ul class="mobile-nav-links">
       <li class="mobile-nav-item" data-mobile-dropdown="homeDropdown">
         <div class="mobile-dropdown-toggle"><span>Home</span><span>▼</span></div>
-        <div class="mobile-dropdown-content" id="homeDropdown"><a href="index.html" data-page="home1">Home 1 - Minimal</a><a href="home2.html" data-page="home2">Home 2 - Aromatic</a></div>
+        <div class="mobile-dropdown-content" id="homeDropdown">
+          <a href="index.html">Home 1</a><a href="home2.html">Home 2</a>
+        </div>
       </li>
-      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-page="about">About</a></li>
-      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link" data-page="service">Service</a></li>
-      <li class="mobile-nav-item"><a href="collection.html" class="mobile-nav-link" data-page="collection">Collection</a></li>
-      <li class="mobile-nav-item"><a href="experience.html" class="mobile-nav-link" data-page="experience">Experience</a></li>
-      <li class="mobile-nav-item"><a href="personalize.html" class="mobile-nav-link" data-page="personalize">Personalize</a></li>
-      <li class="mobile-nav-item"><a href="giftSet.html" class="mobile-nav-link" data-page="giftsets">GiftSets</a></li>
-      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-page="contact">Contact</a></li>
-      <li class="mobile-nav-item"><a href="login.html" class="mobile-nav-link" data-page="login-mobile">Login</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active-link-style">About</a></li>
+      <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+      <li class="mobile-nav-item"><a href="collection.html" class="mobile-nav-link">Collection</a></li>
+      <li class="mobile-nav-item"><a href="experience.html" class="mobile-nav-link">Experience</a></li>
+      <li class="mobile-nav-item"><a href="personalize.html" class="mobile-nav-link">Personalize</a></li>
+      <li class="mobile-nav-item"><a href="giftset.html" class="mobile-nav-link">GiftSets</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Login</a></li>
       <li class="mobile-nav-item">
         <div style="display: flex; gap: 1rem; padding: 1rem 0;">
           <div class="dark-toggle" id="mobileDarkToggle" style="width: 48%; justify-content: center;">🌙 Dark</div>
@@ -1217,196 +962,148 @@
     </ul>
   </div>
 
-  <!-- Hero Banner -->
-  <section class="about-hero" id="heroSection">
-    <div class="about-hero-overlay">
-      <div class="about-hero-content">
-        <div class="section-label">About Flamora</div>
-        <h1>Where Nature Becomes Fragrance</h1>
-        <a href="collection.html" class="hero-btn">Explore Collection →</a>
-      </div>
+  <!-- Hero section -->
+  <section class="hero-main">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">ARTISANAL BOTANICALS</div>
+      <h1>Light Your Ritual.<br>Awaken The Senses.</h1>
+      <p>Hand-poured candles crafted from pure soy wax, wild botanicals, and soulful intention. Transform your space into a sanctuary of calm.</p>
+      <a href="#" class="btn-primary">Explore Collection →</a>
     </div>
   </section>
 
-  <!-- CHOOSE YOUR MOOD SECTION — FULLY VISIBLE, FIXED & INTERACTIVE -->
-  <section class="mood-section" id="moodPicker">
-    <h2>✨ Choose Your Mood ✨</h2>
-    <p>Let your fragrance match your vibe — find the essence that speaks to your heart.</p>
-    <div class="mood-buttons">
-      <button id="moodRelaxBtn"><i class="fa-solid fa-leaf"></i> Relax</button>
-      <button id="moodRomanticBtn"><i class="fa-solid fa-heart"></i> Romantic</button>
-      <button id="moodFocusBtn"><i class="fa-solid fa-brain"></i> Focus</button>
+  <div class="container">
+    <!-- Featured categories -->
+    <h2 class="section-title">Our Signature Collections</h2>
+    <p class="section-subtitle">Discover scents that tell stories of forests, blossoms, and distant lands.</p>
+    <div class="categories-grid">
+      <div class="category-card"><img src="Images\img (3).jpg" alt="Woodland"><div class="category-overlay"><h3>Woodland Muse</h3><a href="#" class="category-btn">Discover →</a></div></div>
+      <div class="category-card"><img src="Images\img (4).jpg" alt="Floral"><div class="category-overlay"><h3>Midnight Bloom</h3><a href="#" class="category-btn">Discover →</a></div></div>
+      <div class="category-card"><img src="Images\img (5).jpg" alt="Spice"><div class="category-overlay"><h3>Golden Spice</h3><a href="#" class="category-btn">Discover →</a></div></div>
     </div>
-    <div class="mood-display">
-      <img id="moodImage" src="Images/img (10).jpg" alt="Mood Scent Visual">
-      <h3 id="moodTitle">Relax Mode</h3>
-      <p style="margin-top: 0.5rem; font-size: 0.9rem;">Soft lavender & calming sandalwood</p>
-    </div>
-  </section>
 
-  <!-- Existing sections -->
-  <section class="signature-section" id="collectionSection">
-    <div class="section-header">
-      <div class="subhead">Signature Blends</div>
-      <h2>Curated Botanical Collections</h2>
-    </div>
-    <div class="collection-grid">
-      <div class="collection-card">
-        <div class="card-img" style="background-image: url('Images/img (4).jpg');"></div>
-        <h3>Forest Moss</h3>
-        <p>Earthy, green, deep woods</p>
-      </div>
-      <div class="collection-card">
-        <div class="card-img" style="background-image: url('Images/img (6).jpg');"></div>
-        <h3>Wild Nectar</h3>
-        <p>Honeyed florals & citrus</p>
-      </div>
-      <div class="collection-card">
-        <div class="card-img" style="background-image: url('Images/img (7).jpg');"></div>
-        <h3>Midnight Jasmine</h3>
-        <p>Sensual white florals</p>
+    <!-- Features -->
+    <div style="margin: 5rem 0 3rem;">
+      <h2 class="section-title">Why Flamora?</h2>
+      <p class="section-subtitle">Crafted with intention, made for mindful living.</p>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-seedling"></i></div><h4>100% Botanical</h4><p>Pure soy wax, lead-free cotton wicks, and essential oil infusions.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-recycle"></i></div><h4>Zero Waste</h4><p>Reusable vessels, compostable packaging, and carbon-neutral shipping.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-hand-sparkles"></i></div><h4>Handcrafted</h4><p>Every candle is small-batch poured by artisan hands in our atelier.</p></div>
       </div>
     </div>
-  </section>
 
-  <section class="ritual-experience" id="ritualSection">
-    <div class="ritual-container">
-      <div class="ritual-text">
-        <h2>The Ritual of Presence</h2>
-        <p>Immerse yourself in mindful moments. Each Flamora scent is an invitation to slow down, breathe, and reconnect with your inner self.</p>
-        <ul class="ritual-list">
-          <li><span>🌿</span> <span>Morning Awakening Mist</span></li>
-          <li><span>🌙</span> <span>Evening Meditation Oil</span></li>
-          <li><span>🕯️</span> <span>Mindful Candle Lighting</span></li>
-        </ul><a href="experience.html" class="ritual-btn">Discover the Ritual →</a>
-      </div>
-      <div class="ritual-image"><img src="Images/img (5).jpg" alt="Ritual Experience"></div>
+    <!-- Testimonials -->
+    <h2 class="section-title">Whispers From Our Community</h2>
+    <p class="section-subtitle">Join thousands who have turned their homes into sanctuaries.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card"><div class="star-rating">★★★★★</div><p class="testimonial-text">"The Midnight Bloom candle transformed my evening routine. The scent lingers beautifully without being overwhelming."</p><p class="testimonial-author">— Clara D.</p></div>
+      <div class="testimonial-card"><div class="star-rating">★★★★★</div><p class="testimonial-text">"Ethical, stunning packaging, and the most authentic botanical fragrance I've ever experienced. Flamora is unmatched."</p><p class="testimonial-author">— Marcus T.</p></div>
+      <div class="testimonial-card"><div class="star-rating">★★★★★</div><p class="testimonial-text">"I gifted the Woodland Muse set and my friend cried. The craftsmanship is pure poetry."</p><p class="testimonial-author">— Elena R.</p></div>
     </div>
-  </section>
 
-  <section class="personalized-section" id="personalizeSection">
-    <div class="section-header">
-      <div class="subhead">Your Signature</div>
-      <h2>Personalize Your Essence</h2>
+    <!-- Call to action -->
+    <div class="cta-banner">
+      <h2>Curate Your Signature Scent</h2>
+      <p>Take our sensory quiz and we'll craft a personalized fragrance box just for you.</p>
+      <a href="#" class="btn-light">Begin The Ritual →</a>
     </div>
-    <div class="personalized-grid">
-      <div class="personal-card">
-        <div class="personal-icon"><i class="fa-solid fa-flask"></i></div>
-        <h4>Find Your Scent</h4>
-        <p>Discover notes that resonate with your spirit.</p>
-      </div>
-      <div class="personal-card">
-        <div class="personal-icon"><i class="fa-solid fa-gift"></i></div>
-        <h4>Custom Blend</h4>
-        <p>Mix botanicals for a one-of-a-kind formula.</p>
-      </div>
-      <div class="personal-card">
-        <div class="personal-icon"><i class="fa-solid fa-seedling"></i></div>
-        <h4>Engraved Vessel</h4>
-        <p>Add your name or a special date.</p>
-      </div>
-    </div><button class="quiz-btn" id="scentQuizBtn">Take the Scent Quiz →</button>
-  </section>
-
-  <section class="giftset-preview" id="giftsetsSection">
-    <div class="giftset-container">
-      <div class="giftset-text">
-        <h2>Gift the Essence of Nature</h2>
-        <p>Curated gift sets wrapped in botanical elegance. Perfect for celebrations or moments of self-care.</p><a href="giftSet.html" class="gift-btn">Explore Gift Sets →</a>
-      </div>
-      <div class="giftset-gallery">
-        <div class="gift-img" style="background-image: url('Images/img (9).jpg');"></div>
-        <div class="gift-img" style="background-image: url('Images/img (10).jpg');"></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="newsletter-cta">
-    <h3>Receive 15% Off Your First Order</h3>
-    <p>Be the first to know about new arrivals & rituals.</p>
-    <div class="inline-form"><input type="email" placeholder="Your email address" id="ctaNewsEmail"><button id="ctaNewsBtn">Subscribe</button></div>
   </div>
 
   <footer class="unique-footer">
     <div class="footer-container">
-      <div class="footer-brand">
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;"><span style="color: white; font-size: 1.6rem; font-weight: 700;">Flam<span style="color: var(--brand-blue);">ora</span></span></div>
-        <p>Botanical elegance, timeless aroma. Bringing nature's finest blends to your ritual.</p>
-        <div class="social-links"><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-tiktok"></i></div>
-      </div>
-      <div class="footer-col">
-        <h4>QuickLinks</h4>
-        <ul><li><a href="index.html">Home</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About</a></li><li><a href="service.html">Service</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul><li><a href="contact.html">Contact</a></li><li><a href="#">Stores</a></li><li><a href="#">Careers</a></li><li><a href="#">Wholesale</a></li></ul>
-      </div>
-      <div class="footer-col newsletter">
-        <h4>Mail Box</h4>
-        <p>Subscribe for early releases & 15% off.</p>
-        <div class="newsletter-input"><input type="email" placeholder="Your email" id="newsletterEmail"><button id="newsletterSubmitBtn">→</button></div>
-      </div>
+      <div class="footer-brand"><div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;"><span style="color: white; font-size: 1.6rem; font-weight: 700;">Flam<span style="color: #003f61;">ora</span></span></div><p>Botanical elegance, timeless aroma. Bringing nature's finest blends to your ritual.</p><div class="social-links"><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-tiktok"></i></div></div>
+      <div class="footer-col"><h4>QuickLinks</h4><ul><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Service</a></li><li><a href="#">Collection</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Contact</a></li><li><a href="#">Stores</a></li><li><a href="#">Careers</a></li><li><a href="#">Wholesale</a></li></ul></div>
+      <div class="footer-col newsletter"><h4>Mail Box</h4><p>Subscribe for early releases & 15% off.</p><div class="newsletter-input"><input type="email" placeholder="Your email" id="newsletterEmail"><button id="newsletterSubmitBtn">→</button></div></div>
     </div>
     <div class="footer-bottom"><span>© 2026 Flamora. All rights reserved</span><span><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></span></div>
   </footer>
 
   <script>
     (function () {
-      function redirectToPage(pageUrl) { if (!pageUrl) return; const validPages = ['index.html', 'about.html', 'service.html', 'collection.html', 'experience.html', 'personalize.html', 'giftSet.html', 'contact.html', 'login.html', 'signup.html', 'home2.html']; if (validPages.includes(pageUrl)) window.location.href = pageUrl; else console.log('Navigate:', pageUrl); }
-      function getPageFromElement(el) { const href = el.getAttribute('href'); if (href && !href.startsWith('#') && !href.startsWith('javascript')) return href; const pageAttr = el.getAttribute('data-page'); const mapping = { 'home': 'index.html', 'home1': 'index.html', 'home2': 'home2.html', 'about': 'about.html', 'service': 'service.html', 'blends': 'collection.html', 'collection': 'collection.html', 'ritual': 'experience.html', 'experience': 'experience.html', 'personalize': 'personalize.html', 'giftsets': 'giftSet.html', 'contact': 'contact.html', 'login': 'login.html', 'signup': 'signup.html' }; return mapping[pageAttr] || (pageAttr ? pageAttr + '.html' : null); }
-      function handleNavClick(event) { const target = event.currentTarget; const pageUrl = getPageFromElement(target); if (pageUrl && pageUrl !== '#' && !pageUrl.includes('javascript')) { event.preventDefault(); localStorage.setItem('activePage', pageUrl); redirectToPage(pageUrl); } else if (target.getAttribute('href') === '#') { event.preventDefault(); if (target.getAttribute('data-page') && ['stores', 'careers', 'wholesale', 'privacy', 'terms', 'accessibility'].includes(target.getAttribute('data-page'))) alert('✨ Coming soon! Stay tuned for Flamora updates. ✨'); } }
-      document.querySelectorAll('a[href], [data-page]').forEach(el => { if (el.getAttribute('href') && (el.getAttribute('href').startsWith('http') || el.getAttribute('href').startsWith('https'))) return; el.addEventListener('click', handleNavClick); });
-      document.querySelectorAll('.hero-btn, .ritual-btn, .gift-btn').forEach(btn => btn.addEventListener('click', handleNavClick));
+      const darkToggle = document.getElementById('darkToggleBtn');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      const rtlToggle = document.getElementById('rtlToggleBtn');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeMenu = document.getElementById('closeMenuBtn');
+      const newsletterBtn = document.getElementById('newsletterSubmitBtn');
+      const newsletterInput = document.getElementById('newsletterEmail');
 
-      const darkToggle = document.getElementById('darkToggleBtn'), mobileDark = document.getElementById('mobileDarkToggle'), rtlToggle = document.getElementById('rtlToggleBtn'), mobileRtl = document.getElementById('mobileRtlToggle');
-      const setDarkMode = (isDark) => { document.body.classList.toggle('dark-mode', isDark); localStorage.setItem('darkMode', isDark); if (darkToggle) darkToggle.innerText = isDark ? '☀️' : '🌙'; if (mobileDark) mobileDark.innerText = isDark ? '☀️ Light' : '🌙 Dark'; };
-      const savedDark = localStorage.getItem('darkMode') === 'true'; setDarkMode(savedDark);
-      darkToggle?.addEventListener('click', () => setDarkMode(!document.body.classList.contains('dark-mode'))); mobileDark?.addEventListener('click', () => setDarkMode(!document.body.classList.contains('dark-mode')));
-      const setRTL = (isRTL) => { document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr'); localStorage.setItem('rtlMode', isRTL); const txt = isRTL ? 'RTL' : 'LTR'; if (rtlToggle) rtlToggle.innerText = txt; if (mobileRtl) mobileRtl.innerText = txt; };
-      const savedRTL = localStorage.getItem('rtlMode') === 'true'; setRTL(savedRTL);
-      rtlToggle?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl')); mobileRtl?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+      const setDarkMode = (isDark) => {
+        document.body.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('darkMode', isDark);
+        if (darkToggle) darkToggle.innerText = isDark ? '☀️' : '🌙';
+        if (mobileDark) mobileDark.innerText = isDark ? '☀️ Light' : '🌙 Dark';
+      };
+      const savedDark = localStorage.getItem('darkMode') === 'true';
+      setDarkMode(savedDark);
+      darkToggle?.addEventListener('click', () => setDarkMode(!document.body.classList.contains('dark-mode')));
+      mobileDark?.addEventListener('click', () => setDarkMode(!document.body.classList.contains('dark-mode')));
 
-      const hamburger = document.getElementById('hamburgerBtn'), mobileMenu = document.getElementById('mobileMenu'), closeMenu = document.getElementById('closeMenuBtn');
-      hamburger?.addEventListener('click', () => mobileMenu.classList.add('active')); closeMenu?.addEventListener('click', () => mobileMenu.classList.remove('active'));
-      document.addEventListener('click', (e) => { if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) mobileMenu.classList.remove('active'); });
-      document.querySelectorAll('.mobile-nav-item[data-mobile-dropdown]').forEach(item => { const toggle = item.querySelector('.mobile-dropdown-toggle'), contentId = item.getAttribute('data-mobile-dropdown'), content = document.getElementById(contentId); if (toggle && content) toggle.addEventListener('click', (e) => { e.stopPropagation(); document.querySelectorAll('.mobile-dropdown-content').forEach(d => { if (d !== content && d.classList.contains('active')) d.classList.remove('active'); }); content.classList.toggle('active'); const arrow = toggle.querySelector('span:last-child'); if (arrow) arrow.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)'; }); });
+      const setRTL = (isRTL) => {
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        localStorage.setItem('rtlMode', isRTL);
+        const rtlText = isRTL ? 'RTL' : 'LTR';
+        if (rtlToggle) rtlToggle.innerText = rtlText;
+        if (mobileRtl) mobileRtl.innerText = rtlText;
+      };
+      const savedRTL = localStorage.getItem('rtlMode') === 'true';
+      setRTL(savedRTL);
+      rtlToggle?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+      mobileRtl?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
 
-      const handleNewsletter = (field, msg) => { const email = field?.value.trim(); if (email && email.includes('@') && email.includes('.')) { alert(msg || `Thanks ${email} — you're on the Flamora list!`); field.value = ''; } else alert('Please enter a valid email.'); };
-      document.getElementById('newsletterSubmitBtn')?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(document.getElementById('newsletterEmail'), 'Thanks for subscribing to Flamora!'); });
-      document.getElementById('ctaNewsBtn')?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(document.getElementById('ctaNewsEmail'), 'You\'re in! 15% off code sent via email.'); });
-      document.getElementById('scentQuizBtn')?.addEventListener('click', () => alert('✨ Scent quiz coming soon! Discover your perfect botanical match. ✨'));
-
-      const moodImage = document.getElementById('moodImage');
-      const moodTitle = document.getElementById('moodTitle');
-      const moodDesc = document.querySelector('#moodPicker .mood-display p');
-      const relaxBtn = document.getElementById('moodRelaxBtn');
-      const romanticBtn = document.getElementById('moodRomanticBtn');
-      const focusBtn = document.getElementById('moodFocusBtn');
-
-      function updateMood(moodType) {
-        if (moodType === 'relax') {
-          moodImage.src = "Images/img (10).jpg";
-          moodTitle.innerText = "Relax Mode";
-          if (moodDesc) moodDesc.innerText = "Soft lavender, chamomile & calming sandalwood — unwind in stillness.";
-        } else if (moodType === 'romantic') {
-          moodImage.src = "Images/img (11).jpg";
-          moodTitle.innerText = "Romantic Mood";
-          if (moodDesc) moodDesc.innerText = "Velvet rose, jasmine & warm amber — an embrace of passion.";
-        } else if (moodType === 'focus') {
-          moodImage.src = "Images/img (12).jpg";
-          moodTitle.innerText = "Focus Energy";
-          if (moodDesc) moodDesc.innerText = "Eucalyptus, fresh mint & cedarwood — clarity and intention.";
+      hamburger?.addEventListener('click', () => mobileMenu.classList.add('active'));
+      closeMenu?.addEventListener('click', () => mobileMenu.classList.remove('active'));
+      document.addEventListener('click', (e) => {
+        if (mobileMenu?.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger?.contains(e.target)) {
+          mobileMenu.classList.remove('active');
         }
-      }
-      if (relaxBtn) relaxBtn.addEventListener('click', () => updateMood('relax'));
-      if (romanticBtn) romanticBtn.addEventListener('click', () => updateMood('romantic'));
-      if (focusBtn) focusBtn.addEventListener('click', () => updateMood('focus'));
-      updateMood('relax');
+      });
 
-      window.addEventListener('resize', () => { if (window.innerWidth >= 1281 && mobileMenu?.classList.contains('active')) mobileMenu.classList.remove('active'); });
+      document.querySelectorAll('.mobile-nav-item[data-mobile-dropdown]').forEach(item => {
+        const toggleDiv = item.querySelector('.mobile-dropdown-toggle');
+        const contentId = item.getAttribute('data-mobile-dropdown');
+        const content = document.getElementById(contentId);
+        if (toggleDiv && content) {
+          toggleDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown-content').forEach(drop => {
+              if (drop !== content && drop.classList.contains('active')) drop.classList.remove('active');
+            });
+            content.classList.toggle('active');
+            const arrowSpan = toggleDiv.querySelector('span:last-child');
+            if (arrowSpan) arrowSpan.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          });
+        }
+      });
+
+      const handleNewsletter = () => {
+        const email = newsletterInput?.value.trim();
+        if (email && email.includes('@') && email.includes('.')) {
+          alert(`Thanks ${email} — you're now on the Flamora list!`);
+          newsletterInput.value = '';
+        } else {
+          alert('Please enter a valid email address.');
+        }
+      };
+      newsletterBtn?.addEventListener('click', (e) => { e.preventDefault(); handleNewsletter(); });
+      newsletterInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); handleNewsletter(); } });
+
+      document.querySelectorAll('.nav-links a, .mobile-nav-link, .dropdown-content a, .btn-primary').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href === '#' || href === '' || href === null) e.preventDefault();
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1281 && mobileMenu.classList.contains('active')) mobileMenu.classList.remove('active');
+      });
     })();
   </script>
 </body>
-
 </html>
